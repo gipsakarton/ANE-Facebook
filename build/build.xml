@@ -3,7 +3,7 @@
 
     <!-- Config -->
     <property file="build.config"/>
-    
+
     <!-- Load ant-contrib -->
     <taskdef resource="net/sf/antcontrib/antcontrib.properties">
         <classpath>
@@ -44,7 +44,7 @@
         </copy>
 
         <!-- copy over necessary frameworks, bundles, etc -->
-        <for param="path">
+        <!-- <for param="path">
             <path>
                 <dirset dir="../ios/">
                     <include name="**/*.framework"/>
@@ -56,7 +56,7 @@
                     <fileset dir="@{path}"/>
                 </copy>
             </sequential>
-        </for>
+        </for> -->
 
         <!-- remove the build directory -->
         <delete dir="../ios/build/"/>
@@ -134,6 +134,12 @@
                 </copy>
                 <copy todir="temp/android/${name}-facebook-share-res">
                     <fileset dir="../android/lib/dependencies/facebook-share-4.38.0/res"/>
+                </copy>
+                <copy todir="temp/android/${name}-appcompat-v7-res">
+                    <fileset dir="../android/lib/dependencies/appcompat-v7-27.1.1/res"/>
+                </copy>
+                <copy todir="temp/android/${name}-cardview-v7-res">
+                    <fileset dir="../android/lib/dependencies/cardview-v7-27.1.1/res"/>
                 </copy>
             </else>
         </if>
